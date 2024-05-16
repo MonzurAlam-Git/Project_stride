@@ -13,3 +13,5 @@ let persons = {
 const persons2 = { ...persons };
 const { name, age, ...details } = persons;
 console.log(details);
+
+// Here we can differentiate a single property like name , age or store the rest of the property in object in another object like details ==> destructuring
