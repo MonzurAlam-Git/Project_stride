@@ -13,4 +13,4 @@ func2("syed", 22, func1);
 
 // Indexing
 const num = [12, 22, 32, 21212, 1212];
-num.map((item) => console.log(item, index));
+num.map((item,index) => console.log(item, index));
