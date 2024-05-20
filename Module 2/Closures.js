@@ -12,7 +12,6 @@ const outerFunc = () => {
   // Returning the Result of Calling the Inner Function
 };
 
-const result = outerFunc();
 // console.log("result by innerFunc", result());
 // console.log("result by innerFunc", result());
 
