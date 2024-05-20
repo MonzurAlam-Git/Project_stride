@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import GoogleLogin from "../Components/GoogleLogin";
+import useAuth from "../Hooks/useAuth";
 
 const Login = () => {
+  const { signIn } = useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
-    console.log(email, password);
+    signIn(email, password);
   };
   return (
     <form onSubmit={handleSubmit} className="hero min-h-screen bg-base-200">

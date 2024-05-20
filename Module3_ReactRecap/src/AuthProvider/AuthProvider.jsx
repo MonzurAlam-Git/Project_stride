@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
@@ -29,8 +30,9 @@ const AuthProvider = ({ children }) => {
   };
 
   // signOut
-  const signOut = () => {
+  const logOut = () => {
     return signOut(auth);
+    // console.log("sign out function works");
   };
 
   // Google Authentication
@@ -45,14 +47,14 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     googleLogin,
-    signOut,
+    logOut,
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        console.log(user.email);
+        console.log("Logged In User :", user.email);
       } else {
         console.log("No user");
       }

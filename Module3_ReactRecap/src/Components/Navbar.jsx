@@ -1,11 +1,16 @@
-import React from "react";
+import useAuth from "../Hooks/useAuth";
 
 const Navbar = () => {
+  const { logOut } = useAuth();
+  // const handleOut = () => {
+  //   console.log("Worked Onclick");
+  // };
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="Logout" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -72,7 +77,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button className="btn btn-error" onClick={() => logOut()}>
+          Log Out
+        </button>
       </div>
     </div>
   );
